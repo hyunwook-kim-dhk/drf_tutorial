@@ -328,3 +328,5 @@ dump.rdb
 /orderyo/common/setup_data/applied_scenarios/
 
 # End of https://www.gitignore.io/api/vim,macos,python,django,pycharm+all
+
+*.sqlite
