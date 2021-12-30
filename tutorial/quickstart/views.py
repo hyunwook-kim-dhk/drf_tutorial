@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
-from tutorial.quickstart.serializers import UserSerializer, GroupSerializer
+
+from tutorial.quickstart.models import Schedule
+from tutorial.quickstart.serializers import UserSerializer, GroupSerializer, ScheduleSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -21,3 +23,11 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class ScheduleViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows schedule to be viewed or edited
+    """
+    queryset = Schedule.objects.all()
+    serializer_class = ScheduleSerializer
